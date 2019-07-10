@@ -37,3 +37,9 @@ BARE_ARG=${GIT_CLONE_BARE:+"--bare"}
 IFS=,; for repo in $GIT_REPOS; do
   git clone ${BARE_ARG} ${repo}
 done
+
+# Fetch repos every 5 minutes
+ARGS="GIT_REPOS_PATH=${GIT_REPOS_PATH} GIT_SSH_COMMAND=\"${GIT_SSH_COMMAND}\" SSH_ASKPASS=${SSH_ASKPASS} DISPLAY=${DISPLAY}"
+echo "*/5 * * * * ${ARGS} /git-fetch.sh"  > /cronfile
+
+crontab /cronfile
