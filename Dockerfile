@@ -4,4 +4,4 @@ COPY README.md bin/* /
 
 ENV GIT_REPOS_PATH=/git-repos
 
-ENTRYPOINT /entrypoint.sh && crond -f
+ENTRYPOINT /entrypoint.sh && exec crond -f
