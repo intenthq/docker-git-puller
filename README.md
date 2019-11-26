@@ -36,7 +36,7 @@ docker run \
   -v ~/.ssh/id_rsa:/id_rsa \
   -e PRIVATE_KEY_PATH=/id_rsa \
   -e PRIVATE_KEY_PASS=“supersecretpass” \
-  -e GIT_REPOS=git@github.com:intenthq/gitkv.git,git@github.com:intenthq/anon.git
+  -e GIT_REPOS=git@github.com:intenthq/gitkv.git,git@github.com:intenthq/anon.git \
   intenthq/git-puller
 ```
 
